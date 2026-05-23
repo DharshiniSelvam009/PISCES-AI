@@ -1,0 +1,22 @@
+# Python cache and build files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+
+# VS Code settings
+.vscode/
+
+# Environment files
+.env
+
+# Data files
+uploads/
+all_chats.json
+chat_history.json
+
+# OS files
+.DS_Store
+Thumbs.db
