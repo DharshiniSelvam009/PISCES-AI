@@ -117,6 +117,28 @@ html, body, [class*="css"] {
     font-weight: 600;
     color: #5b21b6;
 }
+.scroll-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    color: white !important;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 45px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(124,58,237,0.4);
+    z-index: 9999;
+    display: block !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.scroll-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(124,58,237,0.5);
+}
 
 /* ── Sidebar upload button styled as + ── */
 .upload-label {
@@ -195,6 +217,187 @@ section[data-testid="stSidebar"] [data-testid="stFileUploader"] label {
     font-size: 0.88rem;
     color: #4b5563;
     line-height: 1.65;
+}
+/* ── Glassmorphism Sidebar ── */
+section[data-testid="stSidebar"] {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-right: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 4px 0 24px rgba(124, 58, 237, 0.15) !important;
+}
+
+/* ── Sidebar inner content ── */
+section[data-testid="stSidebar"] > div {
+    background: transparent !important;
+    padding: 1.5rem 1rem !important;
+}
+
+/* ── Sidebar title ── */
+section[data-testid="stSidebar"] h2 {
+    font-family: 'Playfair Display', serif !important;
+    background: linear-gradient(135deg, #7c3aed, #2563eb) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* ── New Chat button ── */
+section[data-testid="stSidebar"] .stButton:first-of-type button {
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 14px !important;
+    padding: 10px 18px !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35) !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+    width: 100% !important;
+}
+section[data-testid="stSidebar"] .stButton:first-of-type button:hover {
+    transform: scale(1.03) !important;
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5) !important;
+}
+
+/* ── Divider ── */
+section[data-testid="stSidebar"] hr {
+    border-color: rgba(124, 58, 237, 0.2) !important;
+    margin: 1rem 0 !important;
+}
+
+/* ── Chat list buttons ── */
+section[data-testid="stSidebar"] .stButton button {
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 12px !important;
+    color: #2d2250 !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+    padding: 8px 12px !important;
+    transition: all 0.2s !important;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.08) !important;
+    text-align: left !important;
+}
+section[data-testid="stSidebar"] .stButton button:hover {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-color: #c4b5fd !important;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.2) !important;
+    transform: translateX(3px) !important;
+}
+
+/* ── Active/Primary chat button ── */
+section[data-testid="stSidebar"] .stButton button[kind="primary"] {
+    background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(139,92,246,0.2)) !important;
+    border: 1.5px solid #a78bfa !important;
+    color: #4c1d95 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.2) !important;
+}
+
+/* ── Delete button ── */
+section[data-testid="stSidebar"] .stButton button[title="🗑"] {
+    background: rgba(255, 100, 100, 0.1) !important;
+    border: 1.5px solid rgba(255, 100, 100, 0.3) !important;
+    color: #dc2626 !important;
+    border-radius: 10px !important;
+}
+section[data-testid="stSidebar"] .stButton button[title="🗑"]:hover {
+    background: rgba(255, 100, 100, 0.2) !important;
+    transform: scale(1.05) !important;
+}
+
+/* ── Upload PDF section ── */
+section[data-testid="stSidebar"] h3 {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    color: #4c1d95 !important;
+    letter-spacing: 0.03em !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* ── File uploader dropzone ── */
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
+    background: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px dashed #a78bfa !important;
+    border-radius: 14px !important;
+    padding: 12px !important;
+    box-shadow: 0 4px 14px rgba(124,58,237,0.1) !important;
+    transition: all 0.3s !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"]:hover {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-color: #7c3aed !important;
+    box-shadow: 0 6px 20px rgba(124,58,237,0.2) !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] span {
+    color: #4c1d95 !important;
+    font-weight: 600 !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] small {
+    color: #7c3aed !important;
+}
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] svg {
+    fill: #7c3aed !important;
+}
+
+/* ── PDF active badge ── */
+section[data-testid="stSidebar"] .pdf-active {
+    background: rgba(124, 58, 237, 0.12) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1.5px solid rgba(167, 139, 250, 0.5) !important;
+    border-radius: 12px !important;
+    padding: 10px 14px !important;
+}
+
+/* ── Scrollbar in sidebar ── */
+section[data-testid="stSidebar"]::-webkit-scrollbar {
+    width: 4px !important;
+}
+section[data-testid="stSidebar"]::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+section[data-testid="stSidebar"]::-webkit-scrollbar-thumb {
+    background: rgba(124, 58, 237, 0.3) !important;
+    border-radius: 10px !important;
+}
+/* Mobile sidebar toggle button - force black */
+@media (max-width: 768px) {
+    button[data-testid="stBaseButton-headerNoPadding"] {
+        color: #000000 !important;
+        background-color: #ffffff !important;
+    }
+
+    button[data-testid="stBaseButton-headerNoPadding"] svg {
+        fill: #000000 !important;
+        stroke: #000000 !important;
+    }
+
+    [data-testid="stSidebarCollapseButton"] button {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    [data-testid="stSidebarCollapseButton"] svg {
+        fill: #000000 !important;
+        stroke: #000000 !important;
+    }
+
+    /* Header bar on mobile */
+    header[data-testid="stHeader"] {
+        background: #f0ebff !important;
+    }
+
+    header[data-testid="stHeader"] button svg {
+        fill: #000000 !important;
+    }
 }
 hr { border-color: #e0d7ff !important; margin: 1.5rem 0 !important; }
 #MainMenu, footer { visibility: hidden; }
@@ -310,6 +513,10 @@ with st.sidebar:
                 save_chats(st.session_state.all_chats)
                 st.rerun()
 
+st.markdown("""
+<a href="#bottom" class="scroll-btn">⬇</a>
+""", unsafe_allow_html=True)
+
 # ── Display Chat Messages ────────────────────────────────────
 messages = st.session_state.all_chats[st.session_state.current_chat]
 
@@ -326,6 +533,7 @@ for msg in messages:
             <div class="bot-label">PiscesAI</div>
             <div class="bot-msg">{msg["content"]}</div>
         ''', unsafe_allow_html=True)
+st.markdown('<div id="bottom"></div>', unsafe_allow_html=True)
 
 # ── Active PDF status bar above input ───────────────────────
 if st.session_state.pdf_name:
@@ -370,11 +578,13 @@ if query:
         <div class="bot-label">PiscesAI</div>
         <div class="bot-msg">{answer}</div>
     ''', unsafe_allow_html=True)
+    
 
     st.session_state.all_chats[st.session_state.current_chat].append({
         "role": "assistant", "content": answer
     })
     save_chats(st.session_state.all_chats)
+    
 
     if relevant_chunks:
         with st.expander("📚 View Source Chunks"):
